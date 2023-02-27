@@ -18,7 +18,7 @@
         provider: '{{ palo_provider }}'
         name: 'server1'
         value: '172.16.1.10'
-        description: 'vmware'
+        description: 'cmp'
 
 
 
