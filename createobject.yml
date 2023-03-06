@@ -1,6 +1,6 @@
 ---
 - name: Palo Alto Playbook
-  hosts: palo
+  hosts: 172.230.22.155
   gather_facts: false
   connection: local
   collections:
