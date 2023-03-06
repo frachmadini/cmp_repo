@@ -1,3 +1,4 @@
+---
 - name: Palo Alto Playbook
   hosts: palo
   gather_facts: false
