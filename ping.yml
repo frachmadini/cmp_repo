@@ -1,0 +1,8 @@
+---
+- name: Ping localhost
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: Ping local machine
+    ping:
