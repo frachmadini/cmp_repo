@@ -13,8 +13,8 @@
     - name: Create Server Object
       panos_address_object:
         provider: '{{ palo_provider }}'
-        name: 'server1'
-        value: '172.16.1.10'
+        name: 'server5'
+        value: '172.16.5.50/32'
         description: 'cmp'   
     - name: Commit
       panos_commit:
