@@ -1,0 +1,25 @@
+---
+- name: Palo Alto Playbook
+  hosts: palo
+  gather_facts: false
+  connection: local
+
+  collections:
+    - paloaltonetworks.panos
+
+
+  vars:
+    palo_provider:
+      ip_address: '172.230.22.155'
+      api_key: 'LUFRPT13L3g4Z1ErUklDM0I1c3gzTnBlVXh5NyszMTA9bGpIVThyVlUxbEJxMTIxYytkQi82Q09RTndBR3ZDemZVdHg2aGk1V3ZrNzY3RkdqckxjWURxWXFOZExtbGxxMQ=='
+
+  tasks:
+    - name: Delete Rule Test
+      panos_security_rule:
+        provider: '{{ palo_provider }}'
+        rule_name: 'test_rule'
+        state: 'absent'
+
+    - name: Commit
+      panos_commit:
+        provider: '{{ palo_provider }}'
