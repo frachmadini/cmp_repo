@@ -8,7 +8,7 @@
   vars:
     palo_provider:
       ip_address: '172.230.22.155'
-      api_key: LUFRPT13L3g4Z1ErUklDM0I1c3gzTnBlVXh5NyszMTA9bGpIVThyVlUxbEJxMTIxYytkQi82Q09RTndBR3ZDemZVdHg2aGk1V3ZrNzY3RkdqckxjWURxWXFOZExtbGxxMQ==
+      api_key: LUFRPT1YTHNkL21SVGR2TTF6MHJtTFYxVDlDWXA5QU09bGpIVThyVlUxbEJxMTIxYytkQi82T3FRaythRDJYQ0hXNytTWFZhR0J5TjRNRk05ZWh1dTlyNXNzSE9oNmdFOA==
   tasks:
     - name: Create Server Object
       panos_address_object:
