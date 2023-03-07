@@ -1,0 +1,36 @@
+---
+- hosts: citrix
+  gather_facts: no
+  vars:
+    resource: server
+    request_payload:
+      server:
+        name: test-server-1
+        ipaddress: 172.230.22.11
+
+  tasks:
+    - name: Get resource
+      delegate_to: localhost
+      ignore_errors: true
+      register: result
+      uri:
+        url: "http://172.230.22.153/nitro/v1/config/server/"
+        method: GET
+        status_code: 200
+        return_content: yes
+        headers:
+          X-NITRO-USER: "nsroot"
+          X-NITRO-PASS: "P@ssw0rd01"
+
+    - name: Add resource when not existing
+      delegate_to: localhost
+      uri:
+        url: "http://172.230.22.153/nitro/v1/config/server"
+        method: POST
+        status_code: 201
+        return_content: yes
+        headers:
+          X-NITRO-USER: "nsroot"
+          X-NITRO-PASS: "P@ssw0rd01"
+        body_format: json
+        body: "{{ request_payload }}"
